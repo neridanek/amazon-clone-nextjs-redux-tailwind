@@ -1,5 +1,5 @@
 import { buffer } from 'micro';
-import * as admin from 'firebase-admin';
+import * as admin from 'firebase';
 
 const serviceAccount = require('../../permission.json');
 
@@ -41,7 +41,6 @@ export default async (req, res) => {
     //verify that the event posted came from stripe
     try {
       event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
-      console.log(event);
     } catch (err) {
       console.log('ERROR', err.message);
       return res.status(400).send(`Webhook error${err.message}`);

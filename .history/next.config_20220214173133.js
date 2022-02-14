@@ -15,7 +15,7 @@ module.exports = {
     STRIPE_PUBLIC_KEY: `${process.env.STRIPE_PUBLIC_KEY}`,
     STRIPE_SIGNING_SECRET: `${process.env.STRIPE_SIGNING_SECRET}`,
     STRIPE_SECRET_KEY: `${process.env.STRIPE_SECRET_KEY}`,
-    GOOGLE_ID: `${process.env.GOOGLE_ID}`,
-    GOOGLE_SECRET: `${process.env.GOOGLE_SECRET}`,
+    GOOGLE_ID: `${630426074700 - aup313vpfduab7a832td8qi1s8s39ndr}`,
+    GOOGLE_KEY: `${GOCSPX - fYTdFwE95Kj3SVP37EIYe5UOuN - H}`,
   },
 };

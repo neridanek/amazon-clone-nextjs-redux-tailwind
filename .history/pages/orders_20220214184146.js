@@ -3,7 +3,6 @@ import Header from '../src/components/Header';
 import { useSession, getSession } from 'next-auth/client';
 import { delBasePath } from 'next/dist/next-server/lib/router/router';
 import db from '../firebase';
-import Order from '../src/components/Order';
 const orders = ({ orders }) => {
   const [session] = useSession();
   console.log(orders);
@@ -15,7 +14,7 @@ const orders = ({ orders }) => {
           Your Orders
         </h1>
         {session ? (
-          <h2>{orders.length} Orders</h2>
+          <h2>x Orders</h2>
         ) : (
           <h2>Please sign in to see your orders</h2>
         )}
