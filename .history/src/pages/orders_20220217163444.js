@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../src/components/Header';
+import Header from '../../src/components/Header';
 import { useSession, getSession } from 'next-auth/client';
 import { delBasePath } from 'next/dist/next-server/lib/router/router';
-import db from '../firebase';
+import { db } from '../firebase';
 import Order from '../src/components/Order';
 const orders = ({ orders }) => {
   const [session] = useSession();
@@ -59,7 +59,8 @@ export async function getServerSideProps(context) {
     .orderBy('timestamp', 'desc')
     .get();
 
-  const orders = await Promise.all(stripeOrders.docs.map(async order => ({
+  const orders = await Promise.all(
+    stripeOrders.docs.map(async order => ({
       id: order.id,
       amount: order.data().amount,
       amountShipping: order.data().amount_shipping,
